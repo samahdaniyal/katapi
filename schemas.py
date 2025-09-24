@@ -16,39 +16,39 @@ class ProductResponse(ProductBase):
     class Config:
         orm_mode = True
 
-# # -------- Order --------
-# class OrderProductBase(BaseModel):
-#     product_id: int
-#     quantity: int
+# -------- Order --------
+class OrderProductBase(BaseModel):
+    product_id: int
+    quantity: int
 
-# class OrderProductCreate(OrderProductBase):
-#     pass
+class OrderProductCreate(OrderProductBase):
+    pass
 
-# class OrderProductResponse(OrderProductBase):
-#     id: int
-#     class Config:
-#         orm_mode = True
+class OrderProductResponse(OrderProductBase):
+    id: int
+    class Config:
+        orm_mode = True
 
-# class OrderBase(BaseModel):
-#     status: str = "pending"
+class OrderBase(BaseModel):
+    status: str = "pending"
 
-# class OrderCreate(OrderBase):
-#     products: List[OrderProductCreate]
+class OrderCreate(OrderBase):
+    products: List[OrderProductCreate]
 
-# class OrderResponse(OrderBase):
-#     id: int
-#     shipment_amount: float
-#     total_amount: float
-#     weight: float
-#     products: List[OrderProductResponse]
-#     class Config:
-#         orm_mode = True
+class OrderResponse(OrderBase):
+    id: int
+    shipment_amount: float
+    total_amount: float
+    weight: float
+    products: List[OrderProductResponse]
+    class Config:
+        orm_mode = True
 
-# # -------- Bill --------
-# class BillResponse(BaseModel):
-#     id: int
-#     order_id: int
-#     amount: float
-#     creation_date: datetime
-#     class Config:
-#         orm_mode = True
+# -------- Bill --------
+class BillResponse(BaseModel):
+    id: int
+    order_id: int
+    amount: float
+    creation_date: datetime
+    class Config:
+        orm_mode = True
